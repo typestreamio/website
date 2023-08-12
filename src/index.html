@@ -57,11 +57,6 @@
                 </div><!--end grid-->
 
                 <div class="grid md:grid-cols-2 grid-cols-1 items-center mt-16 gap-[30px]">
-                    <div class="relative">
-                        <img src="assets/images/saas/classic02.png" class="rounded-lg shadow-md dark:shadow-gray-800" alt="">
-                        <div class="overflow-hidden absolute lg:h-[400px] h-[320px] lg:w-[400px] w-[320px] bg-indigo-600/5 dark:bg-indigo-600/20 bottom-0 start-0 rotate-45 -z-1 rounded-3xl"></div>
-                    </div>
-
                     <div class="lg:ms-8">
                         <h4 class="mb-4 text-2xl leading-normal font-medium">Traditional: <br/> Two Days to Two Weeks</h4>
                         <p class="text-slate-400">Developing with Kafka the traditional way means writing a microservice, testing it exhaustively, and managing its deployment in the cloud. This process can take anywhere from a couple of days to two full weeks.</p>
@@ -72,26 +67,17 @@
                         </ul>
 
                     </div>
-                </div>
-            </div><!--end container-->
 
-            <div class="container relative md:mt-24 mt-16">
-                <div class="grid md:grid-cols-2 grid-cols-1 items-center gap-[30px]">
-                    <div class="relative order-1 md:order-2">
-                        <img src="assets/images/saas/classic03.png" class="rounded-lg shadow-md dark:shadow-gray-800" alt="">
-                        <div class="overflow-hidden absolute lg:h-[400px] h-[320px] lg:w-[400px] w-[320px] bg-indigo-600/5 dark:bg-indigo-600/20 bottom-0 end-0 rotate-45 -z-1 rounded-3xl"></div>
-                    </div>
-
-                    <div class="lg:me-8 order-2 md:order-1">
-                        <h4 class="mb-4 text-2xl leading-normal font-medium">TypeStream: Five Minutes</h4>
-                        <p class="text-slate-400">With TypeStream, you can test transformations locally and swiftly deploy them in the cloud. The entire process takes mere minutes, drastically reducing your time-to-market and boosting your productivity. Transition from days or weeks of development to just a few minutes with TypeStream.</p>
-                        <ul class="list-none text-slate-400 mt-4">
-                            <li class="mb-1 flex"><i class="uil uil-check-circle text-indigo-600 text-xl me-2"></i> One liners with a familiar interface</li>
-                            <li class="mb-1 flex"><i class="uil uil-check-circle text-indigo-600 text-xl me-2"></i> Deploy with a single command</li>
-                            <li class="mb-1 flex"><i class="uil uil-check-circle text-indigo-600 text-xl me-2"></i> Quick iterations</li>
-                        </ul>
-                    </div>
+                <div class="lg:me-8 order-2 md:order-1">
+                    <h4 class="mb-4 text-2xl leading-normal font-medium">TypeStream: Five Minutes</h4>
+                    <p class="text-slate-400">With TypeStream, you can test transformations locally and swiftly deploy them in the cloud. The entire process takes mere minutes, drastically reducing your time-to-market and boosting your productivity. Transition from days or weeks of development to just a few minutes with TypeStream.</p>
+                    <ul class="list-none text-slate-400 mt-4">
+                        <li class="mb-1 flex"><i class="uil uil-check-circle text-indigo-600 text-xl me-2"></i> One liners with a familiar interface</li>
+                        <li class="mb-1 flex"><i class="uil uil-check-circle text-indigo-600 text-xl me-2"></i> Deploy with a single command</li>
+                        <li class="mb-1 flex"><i class="uil uil-check-circle text-indigo-600 text-xl me-2"></i> Quick iterations</li>
+                    </ul>
                 </div>
+              </div>
             </div><!--end container-->
 
 
@@ -117,7 +103,11 @@
                                 </h2>
                                 <div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
                                     <div class="p-5">
-                                      <p class="text-slate-400 dark:text-gray-400">Say we have a log of page views and we want to build a heatmap of where people are visiting from. We can enrich those page views with the country by making a `GET` call to an external API: <br /> `cat dev/kafka/local/topics/page_views | enrich { view -> http "https://api.country.is/#{$view.ip_address}" | cut .country`</p>
+                                      <p class="text-slate-400 dark:text-gray-400">Say we have a log of page views and we want to build a heatmap of where people are visiting from. We can enrich those page views with the country by making a `GET` call to an external API: <br />
+                                        <div class="mockup-code">
+                                          <pre data-prefix="$"><code>cat dev/kafka/local/topics/page_views | enrich { view -> http "https://api.country.is/#{$view.ip_address}" | cut .country</code></pre>
+                                        </div>
+                                      </p>
                                     </div>
                                 </div>
                             </div>
@@ -133,7 +123,11 @@
                                 </h2>
                                 <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
                                     <div class="p-5">
-                                      <p class="text-slate-400 dark:text-gray-400">Let's say you have a stream of page views of your site being logged to a "page_views" topic. We can remove plunk the data we want and re-emit the data: <br /> `cat dev/kafka/local/topics/page_views | cut .book_id .viewed_at` </p>
+                                      <p class="text-slate-400 dark:text-gray-400">Let's say you have a stream of page views of your site being logged to a "page_views" topic. We can remove plunk the data we want and re-emit the data: <br />
+                                        <div class="mockup-code">
+                                          <pre data-prefix="$"><code>cat dev/kafka/local/topics/page_views | cut .book_id .viewed_at</code></pre>
+                                        </div>
+                                      </p>
                                     </div>
                                 </div>
                             </div>
@@ -149,7 +143,11 @@
                                 </h2>
                                 <div id="accordion-collapse-body-3" class="hidden" aria-labelledby="accordion-collapse-heading-3">
                                     <div class="p-5">
-                                      <p class="text-slate-400 dark:text-gray-400">Say we have a bookstore and we record all new books to the topic "books". We would like to enrich the book information with summaries from OpenAI: <br /> `cat dev/kafka/local/topics/books | enrich { book -> openai-complete "Summarize the book #{$book.title}" | cut .text}`</p>
+                                      <p class="text-slate-400 dark:text-gray-400">Say we have a bookstore and we record all new books to the topic "books". We would like to enrich the book information with summaries from OpenAI:
+                                        <div class="mockup-code">
+                                          <pre data-prefix="$"><code>cat dev/kafka/local/topics/books | enrich { book -> openai-complete "Summarize the book #{$book.title}" | cut .text}</code></pre>
+                                        </div>
+                                      </p>
                                     </div>
                                 </div>
                             </div>
@@ -173,8 +171,6 @@
         <!-- End -->
 
         @@include("partials/footer/footer.html")
-
-        @@include("partials/cookies.html")
 
         <!-- Back to top -->
         <a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top fixed hidden text-lg rounded-full z-10 bottom-5 end-5 h-9 w-9 text-center bg-indigo-600 text-white leading-9"><i class="uil uil-arrow-up"></i></a>
