@@ -1,12 +1,9 @@
 {
 	"private": true,
-	"name": "techwind",
-	"version": "1.9.5",
-	"description": "Tailwind CSS Saas & Software Multipurpose Template",
+	"name": "TypeStream Website",
+	"version": "0.0.1",
+	"description": "typestream.io homepage",
 	"main": "gulpfile.js",
-	"author": "ShreeThemes",
-	"email": "support@shreethemes.in",
-	"website": "https://shreethemes.in/",
 	"browserslist": [
 		"last 2 version",
 		"> 2%"
