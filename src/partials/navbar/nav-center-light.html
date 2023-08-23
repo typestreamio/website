@@ -1,41 +1,67 @@
 <!-- Start Navbar -->
 <nav id="topnav" class="defaultscroll is-sticky">
-    <div class="container relative">
-        <!-- Logo container-->
-        <a class="logo" href="index.html">
-            <span class="inline-block dark:hidden">
-                <img src="assets/images/logo-dark-sm.png" class="l-dark" height="24" alt="">
-                <img src="assets/images/logo-light-sm.png" class="l-light" height="24" alt="">
-            </span>
-            <img src="assets/images/logo-light-sm.png" height="24" class="hidden dark:inline-block" alt="">
+  <div class="container relative">
+    <!-- Logo container-->
+    <a class="logo" href="index.html">
+      <span class="inline-block dark:hidden">
+        <img
+          src="assets/images/logo-dark-sm.png"
+          class="l-dark"
+          height="24"
+          alt=""
+        />
+        <img
+          src="assets/images/logo-light-sm.png"
+          class="l-light"
+          height="24"
+          alt=""
+        />
+      </span>
+      <img
+        src="assets/images/logo-light-sm.png"
+        height="24"
+        class="hidden dark:inline-block"
+        alt=""
+      />
+    </a>
+
+    <!-- End Logo container-->
+    <div class="menu-extras">
+      <div class="menu-item">
+        <!-- Mobile menu toggle-->
+        <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
+          <div class="lines">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </a>
+        <!-- End mobile menu toggle-->
+      </div>
+    </div>
 
-        <!-- End Logo container-->
-        <div class="menu-extras">
-            <div class="menu-item">
-                <!-- Mobile menu toggle-->
-                <a class="navbar-toggle" id="isToggle" onclick="toggleMenu()">
-                    <div class="lines">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </a>
-                <!-- End mobile menu toggle-->
-            </div>
-        </div>
-
-
-        <div id="navigation">
-            <!-- Navigation Menu-->
-            <ul class="navigation-menu nav-light">
-                <li><a href="index.html" class="sub-menu-item">Home</a></li>
-                <li><a href="aboutus.html" class="sub-menu-item">About Us</a></li>
-                <li><a href="integrations-marketplace.html" class="sub-menu-item">Integrations</a></li>
-                <li><a href="https://typestream.io/docs/getting-started" class="sub-menu-item">Docs</a></li>
-                <li><a href="contact.html" class="sub-menu-item">Contact</a></li>
-            </ul><!--end navigation menu-->
-        </div><!--end navigation-->
-    </div><!--end container-->
-</nav><!--end header-->
+    <div id="navigation">
+      <!-- Navigation Menu-->
+      <ul class="navigation-menu nav-light">
+        <li><a href="index.html" class="sub-menu-item">Home</a></li>
+        <li><a href="about.html" class="sub-menu-item">About Us</a></li>
+        <li>
+          <a href="integrations.html" class="sub-menu-item">Integrations</a>
+        </li>
+        <li>
+          <a
+            href="https://typestream.io/docs/getting-started"
+            class="sub-menu-item"
+            >Docs</a
+          >
+        </li>
+        <li><a href="contact.html" class="sub-menu-item">Contact</a></li>
+      </ul>
+      <!--end navigation menu-->
+    </div>
+    <!--end navigation-->
+  </div>
+  <!--end container-->
+</nav>
+<!--end header-->
 <!-- End Navbar -->
