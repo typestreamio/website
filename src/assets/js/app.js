@@ -121,7 +121,7 @@ function activateMenu() {
       } else {
         var parentOfParent = getClosest(
           matchingMenuItem,
-          ".parent-parent-menu-item",
+          ".parent-parent-menu-item"
         );
         if (parentOfParent) {
           parentOfParent.classList.add("active");
@@ -201,7 +201,7 @@ function topFunction() {
 /*********************/
 (function () {
   var current = location.pathname.substring(
-    location.pathname.lastIndexOf("/") + 1,
+    location.pathname.lastIndexOf("/") + 1
   );
   if (current === "") return;
   var menuItems = document.querySelectorAll(".sidebar-nav a");
@@ -287,7 +287,7 @@ try {
         "&subject=" +
         subject +
         "&comments=" +
-        comments,
+        comments
     );
     return false;
   }

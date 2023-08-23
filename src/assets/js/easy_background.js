@@ -86,7 +86,7 @@ function easy_background(selector, sld_args) {
           document.querySelector(selector).style.backgroundImage =
             "url('" + vvv + "')";
         }, delay); // >1
-        //collecting delays from curent
+        //collecting delays from current
         li = li + sld_args.delay[iii];
       } else {
         //this function for only  first slide
