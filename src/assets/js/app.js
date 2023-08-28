@@ -64,7 +64,6 @@ function getClosest(elem, selector) {
       Element.prototype.mozMatchesSelector ||
       Element.prototype.msMatchesSelector ||
       Element.prototype.oMatchesSelector ||
-      Element.prototype.webkitMatchesSelector ||
       function (s) {
         var matches = (this.document || this.ownerDocument).querySelectorAll(s),
           i = matches.length;
@@ -83,8 +82,10 @@ function getClosest(elem, selector) {
 function activateMenu() {
   var menuItems = document.getElementsByClassName("sub-menu-item");
   if (menuItems) {
-    var matchingMenuItem = null;
-    for (var idx = 0; idx < menuItems.length; idx++) {
+    let matchingMenuItem = null;
+    for (let idx = 0; idx < menuItems.length; idx++) {
+      console.log([menuItems[idx].href, window.location.href]);
+
       if (menuItems[idx].href === window.location.href) {
         matchingMenuItem = menuItems[idx];
       }
@@ -99,22 +100,22 @@ function activateMenu() {
         immediateParent.classList.add("active");
       }
 
-      var parent = getClosest(immediateParent, ".child-menu-item");
+      let parent = getClosest(immediateParent, ".child-menu-item");
       if (parent) {
         parent.classList.add("active");
       }
 
-      var parent = getClosest(parent || immediateParent, ".parent-menu-item");
+      parent = getClosest(parent || immediateParent, ".parent-menu-item");
 
       if (parent) {
         parent.classList.add("active");
 
-        var parentMenuitem = parent.querySelector(".menu-item");
+        let parentMenuitem = parent.querySelector(".menu-item");
         if (parentMenuitem) {
           parentMenuitem.classList.add("active");
         }
 
-        var parentOfParent = getClosest(parent, ".parent-parent-menu-item");
+        let parentOfParent = getClosest(parent, ".parent-parent-menu-item");
         if (parentOfParent) {
           parentOfParent.classList.add("active");
         }
