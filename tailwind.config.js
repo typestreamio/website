@@ -1,5 +1,3 @@
-const colors = require("tailwindcss/colors");
-const plugin = require("tailwindcss/plugin");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -67,7 +65,7 @@ module.exports = {
         3.25: "0.8125rem",
       },
 
-      maxWidth: ({ theme, breakpoints }) => ({
+      maxWidth: () => ({
         1200: "71.25rem",
         992: "60rem",
         768: "45rem",

@@ -1,49 +1,10 @@
-/* Template Name: Techwind - Multipurpose Tailwind CSS Landing Page Template
-   Author: Shreethemes
-   Email: support@shreethemes.in
-   Website: https://shreethemes.in
-   Version: 1.9.5
-   Created: May 2022
-   File Description: Main JS file of the template
-*/
-
-/*********************************/
-/*         INDEX                 */
-/*================================
- *     01.  Loader               *
- *     02.  Toggle Menus         *
- *     03.  Menu Active          *
- *     04.  Clickable Menu       *
- *     05.  Menu Sticky          *
- *     06.  Back to top          *
- *     07.  Active Sidebar       *
- *     08.  Feather icon         *
- *     09.  Small Menu           *
- *     10.  Wow Animation JS     *
- *     11.  Contact us           *
- *     12.  Dark & Light Mode    *
- *     13.  LTR & RTL Mode       *
- ================================*/
-
 window.addEventListener("load", fn, false);
 
-//  window.onload = function loader() {
 function fn() {
-  // Preloader
-  if (document.getElementById("preloader")) {
-    setTimeout(() => {
-      document.getElementById("preloader").style.visibility = "hidden";
-      document.getElementById("preloader").style.opacity = "0";
-    }, 350);
-  }
   // Menus
   activateMenu();
 }
 
-//Menu
-/*********************/
-/* Toggle Menu */
-/*********************/
 function toggleMenu() {
   document.getElementById("isToggle").classList.toggle("open");
   var isOpen = document.getElementById("navigation");
@@ -57,7 +18,6 @@ function toggleMenu() {
 /*    Menu Active    */
 /*********************/
 function getClosest(elem, selector) {
-  // Element.matches() polyfill
   if (!Element.prototype.matches) {
     Element.prototype.matches =
       Element.prototype.matchesSelector ||
@@ -84,8 +44,6 @@ function activateMenu() {
   if (menuItems) {
     let matchingMenuItem = null;
     for (let idx = 0; idx < menuItems.length; idx++) {
-      console.log([menuItems[idx].href, window.location.href]);
-
       if (menuItems[idx].href === window.location.href) {
         matchingMenuItem = menuItems[idx];
       }
@@ -235,77 +193,6 @@ try {
 /*************************/
 /*      Contact Js       */
 /*************************/
-
-try {
-  function validateForm() {
-    var name = document.forms["myForm"]["name"].value;
-    var email = document.forms["myForm"]["email"].value;
-    var subject = document.forms["myForm"]["subject"].value;
-    var comments = document.forms["myForm"]["comments"].value;
-    document.getElementById("error-msg").style.opacity = 0;
-    document.getElementById("error-msg").innerHTML = "";
-    if (name == "" || name == null) {
-      document.getElementById("error-msg").innerHTML =
-        "<div class='alert alert-warning error_message'>*Please enter a Name*</div>";
-      fadeIn();
-      return false;
-    }
-    if (email == "" || email == null) {
-      document.getElementById("error-msg").innerHTML =
-        "<div class='alert alert-warning error_message'>*Please enter a Email*</div>";
-      fadeIn();
-      return false;
-    }
-    if (subject == "" || subject == null) {
-      document.getElementById("error-msg").innerHTML =
-        "<div class='alert alert-warning error_message'>*Please enter a Subject*</div>";
-      fadeIn();
-      return false;
-    }
-    if (comments == "" || comments == null) {
-      document.getElementById("error-msg").innerHTML =
-        "<div class='alert alert-warning error_message'>*Please enter a Comments*</div>";
-      fadeIn();
-      return false;
-    }
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-        document.getElementById("simple-msg").innerHTML = this.responseText;
-        document.forms["myForm"]["name"].value = "";
-        document.forms["myForm"]["email"].value = "";
-        document.forms["myForm"]["subject"].value = "";
-        document.forms["myForm"]["comments"].value = "";
-      }
-    };
-    xhttp.open("POST", "php/contact.php", true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.send(
-      "name=" +
-        name +
-        "&email=" +
-        email +
-        "&subject=" +
-        subject +
-        "&comments=" +
-        comments
-    );
-    return false;
-  }
-
-  function fadeIn() {
-    var fade = document.getElementById("error-msg");
-    var opacity = 0;
-    var intervalID = setInterval(function () {
-      if (opacity < 1) {
-        opacity = opacity + 0.5;
-        fade.style.opacity = opacity;
-      } else {
-        clearInterval(intervalID);
-      }
-    }, 200);
-  }
-} catch (error) {}
 
 /*********************/
 /* Dark & Light Mode */

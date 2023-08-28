@@ -164,8 +164,8 @@ gulp.task("icons", function () {
     .pipe(sass().on("error", sass.logError))
     .pipe(gulp.dest(paths.dist.css.dir))
     .on("data", function (file) {
-      const buferFile = new cleanCSS(cssOptions).minify(file.contents);
-      return (file.contents = Buffer.from(buferFile.styles));
+      const bufferFile = new cleanCSS(cssOptions).minify(file.contents);
+      return (file.contents = Buffer.from(bufferFile.styles));
     })
     .pipe(
       rename({
