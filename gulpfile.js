@@ -101,14 +101,14 @@ gulp.task("browsersyncReload", function (callback) {
 gulp.task("watch", function () {
   gulp.watch(
     [paths.src.scss.files, "!" + paths.src.scss.icon],
-    gulp.series("scss", "browsersyncReload"),
+    gulp.series("scss", "browsersyncReload")
   );
   gulp.watch(paths.src.scss.icon, gulp.series("icons", "browsersyncReload"));
   gulp.watch([paths.src.js.dir], gulp.series("js", "browsersyncReload"));
   gulp.watch([paths.src.js.pages], gulp.series("jsPages", "browsersyncReload"));
   gulp.watch(
     [paths.src.html.files, paths.src.partials.files],
-    gulp.series(["fileinclude", "scss"], "browsersyncReload"),
+    gulp.series(["fileinclude", "scss"], "browsersyncReload")
   );
 });
 
@@ -152,7 +152,7 @@ gulp.task("scss", function () {
     .pipe(
       rename({
         suffix: ".min",
-      }),
+      })
     )
     .pipe(sourcemaps.write("./"))
     .pipe(gulp.dest(paths.dist.css.dir));
@@ -170,7 +170,7 @@ gulp.task("icons", function () {
     .pipe(
       rename({
         suffix: ".min",
-      }),
+      })
     )
     .pipe(gulp.dest(paths.dist.css.dir));
 });
@@ -187,7 +187,7 @@ gulp.task("fileinclude", function () {
         prefix: "@@",
         basepath: "@file",
         indent: true,
-      }),
+      })
     )
     .pipe(cached())
     .pipe(gulp.dest(paths.dist.base.dir));
@@ -225,7 +225,7 @@ gulp.task("copy:libs", function () {
     .pipe(
       rename(function (path) {
         path.dirname = path.dirname.replace(/\/dist/, "").replace(/\\dist/, "");
-      }),
+      })
     )
     .pipe(gulp.dest(paths.dist.libs.dir));
 });
@@ -242,7 +242,7 @@ gulp.task("html", function () {
         prefix: "@@",
         basepath: "@file",
         indent: true,
-      }),
+      })
     )
     .pipe(replace(/href="(.{0,10})node_modules/g, 'href="$1assets/libs'))
     .pipe(replace(/src="(.{0,10})node_modules/g, 'src="$1assets/libs'))
@@ -266,10 +266,10 @@ gulp.task(
       "icons",
       "js",
       "jsPages",
-      "html",
+      "html"
     ),
-    gulp.parallel("browsersync", "watch"),
-  ),
+    gulp.parallel("browsersync", "watch")
+  )
 );
 
 gulp.task(
@@ -284,6 +284,6 @@ gulp.task(
     "icons",
     "js",
     "jsPages",
-    "html",
-  ),
+    "html"
+  )
 );
