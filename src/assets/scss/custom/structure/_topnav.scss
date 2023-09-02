@@ -1,6 +1,3 @@
-/*********************************/
-/*         Menu                  */
-/*===============================*/
 #topnav {
   @apply fixed start-0 end-0 top-0 z-999 bg-transparent border-0 transition-all duration-500 ease-in-out;
   .logo {
@@ -109,7 +106,7 @@
       @apply bg-transparent;
     }
   }
-  .buy-button {
+  .github-button {
     @apply ltr:float-right rtl:float-left leading-[74px];
     > li {
       @apply leading-[initial];
@@ -143,8 +140,8 @@
       }
     }
   }
-  .buy-button,
-  .buy-menu-btn {
+  .github-button,
+  .github-menu-btn {
     .dropdown {
       .dropdown-toggle {
         @apply after:hidden;
@@ -547,7 +544,7 @@
       @apply ltr:float-left rtl:float-right;
     }
 
-    .buy-button {
+    .github-button {
       .login-btn-primary,
       .btn-icon-dark {
         @apply inline-block #{!important};
