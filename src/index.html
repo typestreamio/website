@@ -11,7 +11,6 @@
   <body class="font-nunito">
     @@include("partials/navbar/nav-center-light.html")
 
-    <!-- Start Hero -->
     <section
       class="relative table w-full py-36 overflow-hidden bg-gradient-to-b to-transparent from-typestream-primary-dark dark:typestream-primary"
     >
@@ -28,12 +27,12 @@
                   class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-typestream-accent relative inline-block"
                   ><span class="relative text-black">Accelerate</span></span
                 >
-                development with Kafka
+                development with TypeStream
               </h4>
               <p class="text-slate-100 text-lg max-w-xl">
-                TypeStream is your powerful abstraction layer for Kafka. Reduce
-                the overhead and complexity, streamline your data streaming
-                tasks, and accelerate your product development cycle.
+                TypeStream is a powerful abstraction layer that allows you to
+                write, run, and ship typed data pipelines with a minimal,
+                familiar syntax in a matter of minutes.
               </p>
 
               <div class="relative mt-8">
@@ -45,7 +44,6 @@
               </div>
             </div>
           </div>
-          <!--end col-->
 
           <div class="md:col-span-6">
             <div
@@ -71,14 +69,9 @@
               </div>
             </div>
           </div>
-          <!--end col-->
         </div>
-        <!--end grid-->
       </div>
-      <!--end container-->
     </section>
-    <!--end section-->
-    <!-- End Hero -->
 
     <!-- Start -->
     <section class="relative md:pb-24 pb-16 overflow-hidden">
@@ -87,11 +80,12 @@
           <h3
             class="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold"
           >
-            Kafka Streams vs TypeStream
+            From your terminal to production in seconds
           </h3>
 
           <p class="text-slate-400 max-w-xl mx-auto">
-            See how TypeStream radically changes your product development
+            See how TypeStream radically speeds up your data pipeline
+            development
           </p>
         </div>
         <!--end grid-->
@@ -101,67 +95,60 @@
         >
           <div class="lg:ms-8">
             <h4 class="mb-4 text-2xl leading-normal font-medium">
-              Kafka Streams: <br />
-              Two Days to Two Weeks
+              Traditional approach
             </h4>
             <p class="text-slate-400">
-              Developing with Kafka Streams means writing a microservice,
-              testing it exhaustively, and managing its deployment in the cloud.
-              This process can take anywhere from a couple of days to two full
-              weeks.
+              No matter how simple your data pipeline, you need to write an app,
+              test it exhaustively. You also have manage its deployment in the
+              cloud. This process always takes days, often weeks.
             </p>
             <ul class="list-none text-slate-400 mt-4">
               <li class="mb-1 flex">
                 <i class="uil uil-minus-circle text-indigo-600 text-xl me-2"></i
-                >Writing Custom Consumers and Producers for the Simplest
-                Transformations
+                >Write a whole application even for the simplest
+                transformations.
               </li>
               <li class="mb-1 flex">
                 <i class="uil uil-minus-circle text-indigo-600 text-xl me-2"></i
-                >Managing containers
+                >Slow development iterations.
               </li>
               <li class="mb-1 flex">
                 <i class="uil uil-minus-circle text-indigo-600 text-xl me-2"></i
-                >Slow iterations
+                >Manage your app on your on in productions.
               </li>
             </ul>
           </div>
 
           <div class="lg:me-8 order-2 md:order-1">
-            <h4 class="mb-4 text-2xl leading-normal font-medium">
-              TypeStream: Five Minutes
-            </h4>
+            <h4 class="mb-4 text-2xl leading-normal font-medium">TypeStream</h4>
             <p class="text-slate-400">
-              With TypeStream, you can test transformations locally and swiftly
-              deploy them in the cloud. The entire process takes mere minutes,
-              drastically reducing your time-to-market and boosting your
-              productivity. Transition from days or weeks of development to just
-              a few minutes with TypeStream.
+              Fire up a TypeStream shell session to quickly iterate your
+              transformations locally. Once you're ready, ship them to
+              production with one simple command. Minutes, not days.
             </p>
             <ul class="list-none text-slate-400 mt-4">
               <li class="mb-1 flex">
                 <i
                   class="uil uil-check-circle text-indigo-600 text-xl me-2"
                 ></i>
-                One liners with a familiar interface
+                One liners with a familiar interface.
               </li>
               <li class="mb-1 flex">
                 <i
                   class="uil uil-check-circle text-indigo-600 text-xl me-2"
                 ></i>
-                Deploy with a single command
+                Deploy with a single command.
               </li>
               <li class="mb-1 flex">
                 <i
                   class="uil uil-check-circle text-indigo-600 text-xl me-2"
                 ></i>
-                Quick iterations
+                TypeStream manages your app in production.
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <!--end container-->
 
       <div class="container relative md:mt-24 mt-16">
         <div class="grid grid-cols-1 pb-8 text-center">
@@ -172,11 +159,9 @@
           </h3>
 
           <p class="text-slate-400 max-w-xl mx-auto">
-            Replacing microservices with a collection of one-liners from the
-            command line is easy.
+            Replace whole applications with one-liners!
           </p>
         </div>
-        <!--end grid-->
 
         <div
           class="relative grid md:grid-cols-12 grid-cols-1 items-center mt-8 gap-[30px]"
@@ -335,42 +320,50 @@
               </div>
             </div>
           </div>
-          <!--end col-->
         </div>
-        <!--end grid-->
       </div>
-      <!--end container-->
 
       <div class="container relative md:mt-24 mt-16">
         <div class="grid grid-cols-1 text-center">
           <h3
             class="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold"
           >
-            Want to learn more?
+            Want to stay in touch?
           </h3>
 
-          <p class="text-slate-400 max-w-xl mx-auto">
-            Drop us an email or join our discord community
-          </p>
+          <p class="text-slate-400 max-w-xl mx-auto">Join our wait list and we'll reach out as soon as possible!</p>
 
           <div class="mt-6">
-            <a
-              href="contact.html"
-              class="py-2 px-5 inline-block font-semibold tracking-wide border align-middle transition duration-500 ease-in-out text-base text-center bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md"
-              ><i class="uil uil-phone align-middle me-2"></i> Contact us</a
-            >
+            <form name="contact" netlify>
+              <div>
+                  <div class="mb-5">
+                    <input
+                      type="email"
+                      class="form-input mt-2 w-full py-2 px-3 h-10 bg-transparent dark:bg-slate-900 dark:text-slate-200 rounded outline-none border border-gray-200 focus:border-indigo-600 dark:border-gray-800 dark:focus:border-indigo-600 focus:ring-0"
+                      placeholder="me@example.com"
+                      name="email"
+                      required="true"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-5">
+                <button
+                  type="submit"
+                  class="form-input mt-2 w-full py-2 px-3 h-10 rounded outline-none border bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-base text-white"
+                >
+                  <i class="uil uil-at align-middle me-2"></i>Send
+                </button>
+              </div>
+            </form>
           </div>
         </div>
-        <!--end grid-->
       </div>
-      <!--end container-->
     </section>
-    <!--end section-->
-    <!-- End -->
 
     @@include("partials/footer/footer.html")
 
-    <!-- Back to top -->
     <a
       href="#"
       onclick="topFunction()"
@@ -378,11 +371,8 @@
       class="back-to-top fixed hidden text-lg rounded-full z-10 bottom-5 end-5 h-9 w-9 text-center bg-indigo-600 text-white leading-9"
       ><i class="uil uil-arrow-up"></i
     ></a>
-    <!-- Back to top -->
 
-    <!-- JAVASCRIPTS -->
     <script src="assets/libs/tobii/js/tobii.min.js"></script>
     @@include("partials/script-file.html")
-    <!-- JAVASCRIPTS -->
   </body>
 </html>
