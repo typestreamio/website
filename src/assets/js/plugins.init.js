@@ -1,45 +1,3 @@
-/* Template Name: Techwind - Multipurpose Tailwind CSS Landing Page Template
-   Author: Shreethemes
-   Email: support@shreethemes.in
-   Website: https://shreethemes.in
-   Version: 1.9.5
-   Created: May 2022
-   File Description: Common JS file of the template(plugins.init.js)
-*/
-
-/*********************************/
-/*         INDEX                 */
-/*================================
- *     01.  Tiny Slider          *
- *     02.  Swiper slider        *
- *     03.  Countdown Js         * (For Comingsoon pages)
- *     04.  Maintenance js       * (For Maintenance page)
- *     05.  Data Counter         *
- *     06.  Datepicker js        *
- *     07.  Gallery filter js    * (For Portfolio pages)
- *     08.  Tobii lightbox       * (For Portfolio pages)
- *     09.  CK Editor            * (For Compose mail)
- *     10.  Fade Animation       * 
- *     11.  Typed Text animation (animation) * 
- *     12.  Validation Form      * 
- *     13.  Switcher Pricing Plan* 
- *     14.  Cookies Policy       *
- *     15.  Back Button          *
- *     16.  Particles            *
- *     17.  Components           *
- *          1. Navtabs           *
- *          2. Modal             *
- *          3. Carousel          *
- *          4. Accordions        *
- *     18. Upload Profile        *
- *     19. Custom Dropdown       * (For Dropdown)
- *     20. Connect wallet        * (Only For MetaMask)
- ================================*/
-
-//=========================================//
-/*            01) Tiny slider              */
-//=========================================//
-
 if (document.getElementsByClassName("tiny-single-item").length > 0) {
   var slider = tns({
     container: ".tiny-single-item",
@@ -420,7 +378,7 @@ try {
     // Time calculations for days, hours, minutes and seconds
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
     var hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
     );
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
@@ -503,7 +461,7 @@ try {
       // Calculating the days, hours, minutes and seconds left
       var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
       var hours = Math.floor(
-        (timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        (timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       );
       var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
       var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
@@ -797,7 +755,7 @@ try {
 
           form.classList.add("was-validated");
         },
-        false,
+        false
       );
     });
   }
@@ -1087,10 +1045,10 @@ try {
       this._items.map((t) => {
         if (t !== tab) {
           t.triggerEl.classList.remove(
-            ...this._options.activeClasses.split(" "),
+            ...this._options.activeClasses.split(" ")
           );
           t.triggerEl.classList.add(
-            ...this._options.inactiveClasses.split(" "),
+            ...this._options.inactiveClasses.split(" ")
           );
           t.targetEl.classList.add("hidden");
           t.triggerEl.setAttribute("aria-selected", false);
@@ -1100,7 +1058,7 @@ try {
       // show active tab
       tab.triggerEl.classList.add(...this._options.activeClasses.split(" "));
       tab.triggerEl.classList.remove(
-        ...this._options.inactiveClasses.split(" "),
+        ...this._options.inactiveClasses.split(" ")
       );
       tab.triggerEl.setAttribute("aria-selected", true);
       tab.targetEl.classList.remove("hidden");
@@ -1332,7 +1290,7 @@ try {
           "absolute",
           "inset-0",
           "transition-all",
-          "transform",
+          "transform"
         );
       });
 
@@ -1437,7 +1395,7 @@ try {
         "translate-x-full",
         "translate-x-0",
         "hidden",
-        "z-20",
+        "z-20"
       );
       rotationItems.left.el.classList.add("-translate-x-full", "z-10");
 
@@ -1447,7 +1405,7 @@ try {
         "translate-x-full",
         "translate-x-0",
         "hidden",
-        "z-10",
+        "z-10"
       );
       rotationItems.middle.el.classList.add("translate-x-0", "z-20");
 
@@ -1457,7 +1415,7 @@ try {
         "translate-x-full",
         "translate-x-0",
         "hidden",
-        "z-20",
+        "z-20"
       );
       rotationItems.right.el.classList.add("translate-x-full", "z-10");
     }
@@ -1497,17 +1455,17 @@ try {
         this._indicators.map((indicator) => {
           indicator.el.setAttribute("aria-current", "false");
           indicator.el.classList.remove(
-            ...this._options.indicators.activeClasses.split(" "),
+            ...this._options.indicators.activeClasses.split(" ")
           );
           indicator.el.classList.add(
-            ...this._options.indicators.inactiveClasses.split(" "),
+            ...this._options.indicators.inactiveClasses.split(" ")
           );
         });
         this._indicators[position].el.classList.add(
-          ...this._options.indicators.activeClasses.split(" "),
+          ...this._options.indicators.activeClasses.split(" ")
         );
         this._indicators[position].el.classList.remove(
-          ...this._options.indicators.inactiveClasses.split(" "),
+          ...this._options.indicators.inactiveClasses.split(" ")
         );
         this._indicators[position].el.setAttribute("aria-current", "true");
       }
@@ -1537,7 +1495,7 @@ try {
             ) {
               defaultPosition = position;
             }
-          },
+          }
         );
       }
 
@@ -1549,7 +1507,7 @@ try {
               position: indicatorEl.getAttribute("data-carousel-slide-to"),
               el: indicatorEl,
             });
-          },
+          }
         );
       }
 
@@ -1629,10 +1587,10 @@ try {
         this._items.map((i) => {
           if (i !== item) {
             i.triggerEl.classList.remove(
-              ...this._options.activeClasses.split(" "),
+              ...this._options.activeClasses.split(" ")
             );
             i.triggerEl.classList.add(
-              ...this._options.inactiveClasses.split(" "),
+              ...this._options.inactiveClasses.split(" ")
             );
             i.targetEl.classList.add("hidden");
             i.triggerEl.setAttribute("aria-expanded", false);
@@ -1649,7 +1607,7 @@ try {
       // show active item
       item.triggerEl.classList.add(...this._options.activeClasses.split(" "));
       item.triggerEl.classList.remove(
-        ...this._options.inactiveClasses.split(" "),
+        ...this._options.inactiveClasses.split(" ")
       );
       item.triggerEl.setAttribute("aria-expanded", true);
       item.targetEl.classList.remove("hidden");
@@ -1681,7 +1639,7 @@ try {
       const item = this.getItem(id);
 
       item.triggerEl.classList.remove(
-        ...this._options.activeClasses.split(" "),
+        ...this._options.activeClasses.split(" ")
       );
       item.triggerEl.classList.add(...this._options.inactiveClasses.split(" "));
       item.targetEl.classList.add("hidden");
@@ -1712,7 +1670,7 @@ try {
           id: el.getAttribute("data-accordion-target"),
           triggerEl: el,
           targetEl: document.querySelector(
-            el.getAttribute("data-accordion-target"),
+            el.getAttribute("data-accordion-target")
           ),
           iconEl: el.querySelector("[data-accordion-icon]"),
           active: el.getAttribute("aria-expanded") === "true" ? true : false,
