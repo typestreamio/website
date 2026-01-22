@@ -24,15 +24,16 @@
     npm run prettier:write
   '';
 
-  # Run dev server on shell entry (optional, comment out if not wanted)
-  # processes.dev.exec = "npx gulp";
+  # Run dev server with `devenv up`
+  processes.dev.exec = "npx gulp";
 
   enterShell = ''
     echo "TypeStream website dev environment"
     echo ""
     echo "Commands:"
-    echo "  dev    - Start development server with live reload"
-    echo "  build  - Build for production"
-    echo "  format - Format code with prettier"
+    echo "  devenv up     - Start dev server with process-compose (TUI)"
+    echo "  dev           - Start development server with live reload"
+    echo "  build         - Build for production"
+    echo "  format        - Format code with prettier"
   '';
 }
